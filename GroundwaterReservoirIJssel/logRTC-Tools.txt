@@ -1,0 +1,392 @@
+2026-06-16 12:12:30,180 INFO Using RTC-Tools 2.7.1.
+2026-06-16 12:12:30,188 INFO Loading/compiling model GroundwaterStorage.
+2026-06-16 12:12:30,240 INFO Starting goal programming
+2026-06-16 12:12:30,240 INFO Solving goals at priority 20
+2026-06-16 12:12:30,240 INFO Entering optimize()
+2026-06-16 12:12:30,240 INFO Transcribing problem with a DAE of 10 equations, 54 collocation points, and 11 free variables
+2026-06-16 12:12:30,254 WARNING The DAE residual contains equations that are not affine. There is therefore no guarantee that the optimization problem is convex. This will, in general, result in the existence of multiple local optima and trouble finding a feasible initial solution.
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+2026-06-16 12:12:30,257 INFO Transcribing ensemble member 1/1
+2026-06-16 12:12:30,258 INFO Interpolating states
+2026-06-16 12:12:30,259 INFO Aggregating and de-scaling variables
+2026-06-16 12:12:30,260 INFO Mapping
+2026-06-16 12:12:30,260 INFO Composing NLP segment
+2026-06-16 12:12:30,262 INFO Creating NLP dictionary
+2026-06-16 12:12:30,262 INFO Done transcribing problem
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+2026-06-16 12:12:30,291 INFO Calling solver
+2026-06-16 12:12:30,361 INFO Solver succeeded with status Solve_Succeeded (0.066395 seconds).
+2026-06-16 12:12:30,361 INFO Done with optimize()
+2026-06-16 12:12:30,362 INFO Extracting results
+2026-06-16 12:12:30,363 INFO Done extracting results
+2026-06-16 12:12:30,372 INFO Solving goals at priority 30
+2026-06-16 12:12:30,373 INFO Entering optimize()
+2026-06-16 12:12:30,373 INFO Transcribing problem with a DAE of 10 equations, 54 collocation points, and 11 free variables
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+2026-06-16 12:12:30,375 INFO Transcribing ensemble member 1/1
+2026-06-16 12:12:30,376 INFO Interpolating states
+2026-06-16 12:12:30,377 INFO Aggregating and de-scaling variables
+2026-06-16 12:12:30,377 INFO Mapping
+2026-06-16 12:12:30,377 INFO Composing NLP segment
+2026-06-16 12:12:30,378 INFO Creating NLP dictionary
+2026-06-16 12:12:30,378 INFO Done transcribing problem
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+2026-06-16 12:12:30,389 INFO Calling solver
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit https://github.com/coin-or/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
+
+Number of nonzeros in equality constraint Jacobian...:     1293
+Number of nonzeros in inequality constraint Jacobian.:      108
+Number of nonzeros in Lagrangian Hessian.............:       53
+
+Total number of variables............................:      648
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:      269
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:      540
+Total number of inequality constraints...............:       54
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:       54
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  5.3460001e+01 5.00e+07 7.06e-01  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  5.3441841e+01 4.98e+07 7.03e-01  -1.0 5.00e+07    -  3.41e-03 3.25e-03h  1
+   2  5.3386680e+01 4.93e+07 2.78e+00  -1.0 4.98e+07    -  6.52e-03 9.87e-03h  1
+   3r 5.3386680e+01 4.93e+07 9.99e+02   7.7 0.00e+00    -  0.00e+00 2.71e-07R  6
+   4r 4.5041983e+01 8.96e+07 6.94e+06   7.7 4.08e+10    -  4.91e-05 2.56e-07f  1
+   5r 4.5036197e+01 1.23e+08 6.78e+06   4.2 2.67e+10    -  2.84e-02 1.83e-03f  1
+   6  4.5099918e+01 1.22e+08 5.07e+00  -1.0 5.36e+05    -  3.54e-02 1.04e-02h  1
+   7  4.5772630e+01 1.08e+08 4.11e+00  -1.0 5.31e+05    -  7.09e-02 1.15e-01h  1
+   8  4.6508279e+01 8.96e+07 3.42e+00  -1.0 4.70e+05    -  1.65e-01 1.67e-01h  1
+   9  4.7677758e+01 4.77e+07 2.12e+00  -1.0 3.92e+05    -  2.52e-01 4.67e-01h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  4.6647659e+01 1.28e+05 1.77e+00  -1.0 2.09e+05    -  5.40e-01 1.00e+00h  1
+  11  3.6576455e+01 7.45e-09 1.29e+00  -1.0 1.54e+00    -  6.05e-01 1.00e+00f  1
+  12  1.0554848e+01 7.45e-09 1.25e-01  -1.0 1.85e+00    -  9.84e-01 8.12e-01f  1
+  13  3.2817973e+00 7.45e-09 4.17e-02  -1.7 2.78e+00    -  7.50e-01 7.94e-01f  1
+  14  9.9705679e-01 7.45e-09 1.39e-02  -2.5 8.64e+00    -  5.86e-01 5.30e-01f  1
+  15  4.0790627e-01 7.45e-09 2.30e-01  -2.5 5.05e+00    -  9.47e-01 4.62e-01f  1
+  16  1.7849067e-01 7.45e-09 1.72e-02  -2.5 2.34e+00    -  9.43e-01 1.00e+00f  1
+  17  1.1387825e-02 1.49e-08 1.15e-03  -3.8 1.13e-01    -  1.00e+00 9.75e-01f  1
+  18  1.0998763e-04 1.49e-08 1.84e-11  -5.7 1.44e-02    -  1.00e+00 1.00e+00f  1
+  19 -3.6139505e-07 1.49e-08 2.51e-14  -8.6 1.85e-03    -  1.00e+00 1.00e+00f  1
+
+Number of Iterations....: 19
+
+                                   (scaled)                 (unscaled)
+Objective...............:  -3.6139504928696225e-07   -3.6139504928696225e-07
+Dual infeasibility......:   2.5063284780912909e-14    2.5063284780912909e-14
+Constraint violation....:   8.5149492536272325e-14    1.4901161193847656e-08
+Variable bound violation:   7.5668456445783593e-09    7.5668456445783593e-09
+Complementarity.........:   3.5593393646055984e-09    3.5593393646055984e-09
+Overall NLP error.......:   3.5593393646055984e-09    1.4901161193847656e-08
+
+
+Number of objective function evaluations             = 26
+Number of objective gradient evaluations             = 19
+Number of equality constraint evaluations            = 26
+Number of inequality constraint evaluations          = 26
+Number of equality constraint Jacobian evaluations   = 21
+Number of inequality constraint Jacobian evaluations = 21
+Number of Lagrangian Hessian evaluations             = 19
+Total seconds in IPOPT                               = 0.063
+
+EXIT: Optimal Solution Found.
+         nlp  :   t_proc      (avg)   t_wall      (avg)    n_eval
+       nlp_f  |   2.00ms ( 76.92us)   1.04ms ( 40.15us)        26
+       nlp_g  |        0 (       0)   1.22ms ( 46.92us)        26
+  nlp_grad_f  |        0 (       0)   2.29ms (108.90us)        21
+  nlp_hess_l  |   2.00ms (111.11us)   4.24ms (235.33us)        18
+   nlp_jac_g  |  16.00ms (727.27us)   4.95ms (224.86us)        22
+       total  |  64.00ms ( 64.00ms)  66.39ms ( 66.39ms)         1
+This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
+
+Number of nonzeros in equality constraint Jacobian...:     1293
+Number of nonzeros in inequality constraint Jacobian.:      268
+Number of nonzeros in Lagrangian Hessian.............:       53
+
+Total number of variables............................:      648
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:      269
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:      540
+Total number of inequality constraints...............:      162
+        inequality constraints with only lower bounds:       54
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:      108
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  5.3460001e+01 8.00e-02 4.12e-01  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  5.0904712e+01 4.35e-02 2.47e+00  -1.0 1.61e-01    -  6.77e-01 4.56e-01f  1
+   2  2.4710312e+01 2.38e-02 9.15e+00  -1.0 2.25e+00    -  8.30e-01 4.54e-01f  1
+   3  2.0213133e+01 1.01e-02 1.45e+01  -1.0 3.19e+00    -  8.56e-01 5.74e-01f  1
+   4  1.5244055e+01 4.36e-03 4.39e+01  -1.0 1.28e+00    -  1.00e+00 5.69e-01f  1
+   5  1.3426929e+01 1.80e-03 1.03e+02  -1.0 5.24e-01    -  1.00e+00 5.86e-01h  1
+   6  1.2688146e+01 7.45e-04 2.46e+02  -1.0 2.23e-01    -  1.00e+00 5.87e-01h  1
+   7  1.2385524e+01 3.09e-04 5.97e+02  -1.0 9.09e-02    -  1.00e+00 5.85e-01h  1
+   8  1.2260260e+01 1.28e-04 1.44e+03  -1.0 3.80e-02    -  1.00e+00 5.86e-01h  1
+   9  1.2208307e+01 5.29e-05 3.47e+03  -1.0 1.56e-02    -  1.00e+00 5.86e-01h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  1.2186828e+01 2.19e-05 8.36e+03  -1.0 6.52e-03    -  1.00e+00 5.87e-01h  1
+  11  1.2177912e+01 9.03e-06 2.01e+04  -1.0 2.67e-03    -  1.00e+00 5.87e-01h  1
+  12  1.2174227e+01 3.70e-06 4.78e+04  -1.0 1.11e-03    -  1.00e+00 5.90e-01h  1
+  13  1.2173462e+01 2.60e-06 1.94e+05  -1.0 4.52e-04    -  1.00e+00 2.98e-01f  2
+  14  1.2171970e+01 4.46e-07 8.72e+04  -1.0 3.18e-04    -  1.00e+00 8.28e-01h  1
+  15  1.2171890e+01 3.31e-07 1.17e+06  -1.0 5.51e-05    -  1.00e+00 2.59e-01f  2
+  16  1.2171661e+01 1.49e-08 1.00e-06  -1.0 4.06e-05    -  1.00e+00 1.00e+00h  1
+  17  2.5253652e+00 1.49e-08 3.83e+05  -5.7 1.66e+00    -  7.47e-01 8.50e-01f  1
+  18  1.4477700e+00 2.24e-08 4.65e+04  -5.7 2.35e+00    -  7.50e-01 4.95e-01f  1
+  19  1.1315549e+00 1.49e-08 5.49e+04  -5.7 3.01e+00    -  5.98e-01 4.70e-01f  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  20  9.9300094e-01 1.49e-08 5.72e+04  -5.7 3.69e+00    -  7.51e-01 4.59e-01f  1
+  21  9.3909549e-01 1.49e-08 3.36e+04  -5.7 7.08e-01    -  6.36e-01 4.78e-01f  1
+  22  8.9954860e-01 1.49e-08 1.00e+04  -5.7 5.58e-01    -  5.89e-01 6.79e-01f  1
+  23  8.8925880e-01 7.45e-09 3.30e+03  -5.7 1.19e-01    -  7.20e-01 6.84e-01f  1
+  24  8.8384288e-01 7.45e-09 3.01e+02  -5.7 5.35e-02    -  1.00e+00 9.30e-01f  1
+  25  8.8373041e-01 7.45e-09 2.07e+02  -5.7 4.28e+00    -  1.00e+00 3.12e-01f  1
+  26  8.8348237e-01 1.49e-08 1.84e-11  -5.7 1.53e+00    -  1.00e+00 1.00e+00f  1
+  27  8.8335892e-01 1.49e-08 1.71e-01  -8.6 1.98e-04    -  9.99e-01 1.00e+00f  1
+  28  8.8335888e-01 1.49e-08 2.51e-14  -8.6 5.31e-02    -  1.00e+00 1.00e+00h  1
+
+Number of Iterations....: 28
+
+                                   (scaled)                 (unscaled)
+2026-06-16 12:12:30,477 INFO Solver succeeded with status Solve_Succeeded (0.085308 seconds).
+2026-06-16 12:12:30,477 INFO Done with optimize()
+2026-06-16 12:12:30,478 INFO Extracting results
+2026-06-16 12:12:30,479 INFO Done extracting results
+2026-06-16 12:12:30,488 INFO Solving goals at priority 40
+2026-06-16 12:12:30,489 INFO Entering optimize()
+2026-06-16 12:12:30,489 INFO Transcribing problem with a DAE of 10 equations, 54 collocation points, and 11 free variables
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+2026-06-16 12:12:30,491 INFO Transcribing ensemble member 1/1
+2026-06-16 12:12:30,492 INFO Interpolating states
+2026-06-16 12:12:30,493 INFO Aggregating and de-scaling variables
+2026-06-16 12:12:30,493 INFO Mapping
+2026-06-16 12:12:30,493 INFO Composing NLP segment
+2026-06-16 12:12:30,494 INFO Creating NLP dictionary
+2026-06-16 12:12:30,495 INFO Done transcribing problem
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+2026-06-16 12:12:30,504 INFO Calling solver
+2026-06-16 12:12:30,633 INFO Solver succeeded with status Solve_Succeeded (0.125548 seconds).
+2026-06-16 12:12:30,633 INFO Done with optimize()
+2026-06-16 12:12:30,634 INFO Extracting results
+2026-06-16 12:12:30,634 INFO Done extracting results
+2026-06-16 12:12:30,641 INFO Solving goals at priority 50
+2026-06-16 12:12:30,641 INFO Entering optimize()
+2026-06-16 12:12:30,641 INFO Transcribing problem with a DAE of 10 equations, 54 collocation points, and 11 free variables
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+2026-06-16 12:12:30,643 INFO Transcribing ensemble member 1/1
+2026-06-16 12:12:30,643 INFO Interpolating states
+2026-06-16 12:12:30,645 INFO Aggregating and de-scaling variables
+2026-06-16 12:12:30,645 INFO Mapping
+2026-06-16 12:12:30,645 INFO Composing NLP segment
+2026-06-16 12:12:30,646 INFO Creating NLP dictionary
+2026-06-16 12:12:30,646 INFO Done transcribing problem
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+CasADi - 2026-06-16 12:12:30 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+2026-06-16 12:12:30,655 INFO Calling solver
+Objective...............:   8.8335888459217282e-01    8.8335888459217282e-01
+Dual infeasibility......:   2.5091040356528538e-14    2.5091040356528538e-14
+Constraint violation....:   5.9604644775390622e-14    1.4901161193847656e-08
+Variable bound violation:   7.4940963899435237e-09    7.4940963899435237e-09
+Complementarity.........:   4.9806656259411435e-09    4.9806656259411435e-09
+Overall NLP error.......:   4.9806656259411435e-09    1.4901161193847656e-08
+
+
+Number of objective function evaluations             = 31
+Number of objective gradient evaluations             = 29
+Number of equality constraint evaluations            = 31
+Number of inequality constraint evaluations          = 31
+Number of equality constraint Jacobian evaluations   = 29
+Number of inequality constraint Jacobian evaluations = 29
+Number of Lagrangian Hessian evaluations             = 28
+Total seconds in IPOPT                               = 0.085
+
+EXIT: Optimal Solution Found.
+         nlp  :   t_proc      (avg)   t_wall      (avg)    n_eval
+       nlp_f  |        0 (       0)   1.32ms ( 42.71us)        31
+       nlp_g  |        0 (       0)   1.55ms ( 49.90us)        31
+  nlp_grad_f  |        0 (       0)   3.47ms (112.10us)        31
+  nlp_hess_l  |        0 (       0)   6.64ms (237.25us)        28
+   nlp_jac_g  |  16.00ms (533.33us)   6.87ms (229.03us)        30
+       total  |  79.00ms ( 79.00ms)  85.31ms ( 85.31ms)         1
+This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
+
+Number of nonzeros in equality constraint Jacobian...:     1293
+Number of nonzeros in inequality constraint Jacobian.:      321
+Number of nonzeros in Lagrangian Hessian.............:       53
+
+Total number of variables............................:      648
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:      269
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:      540
+Total number of inequality constraints...............:      216
+        inequality constraints with only lower bounds:       54
+   inequality constraints with lower and upper bounds:       54
+        inequality constraints with only upper bounds:      108
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  5.3460001e+01 8.00e-02 4.74e-01  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  5.2801554e+01 7.06e-02 1.68e+01  -1.0 7.40e-01    -  7.28e-01 1.18e-01f  1
+   2  1.6875219e+01 4.95e-02 4.54e+01  -1.0 3.70e+00    -  1.00e+00 2.99e-01f  1
+   3  1.6578492e+01 1.39e-02 2.92e+01  -1.0 2.95e-01    -  9.90e-01 7.20e-01h  1
+   4  1.5739283e+01 4.42e-03 8.40e+01  -1.0 2.49e-01    -  1.00e+00 6.81e-01h  1
+   5  1.5810604e+01 2.59e-03 4.46e+02  -1.0 9.68e-02    -  1.00e+00 4.14e-01h  1
+   6  1.5859666e+01 5.66e-04 3.52e+02  -1.0 6.09e-02    -  1.00e+00 7.82e-01h  1
+   7  1.5866729e+01 3.64e-04 3.65e+03  -1.0 1.24e-02    -  1.00e+00 3.57e-01h  1
+   8  1.5876286e+01 8.13e-05 2.67e+03  -1.0 8.58e-03    -  1.00e+00 7.76e-01h  1
+   9  1.5877314e+01 5.15e-05 2.52e+04  -1.0 1.78e-03    -  1.00e+00 3.66e-01h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  1.5878670e+01 1.16e-05 1.87e+04  -1.0 1.21e-03    -  1.00e+00 7.76e-01h  1
+  11  1.5878817e+01 7.30e-06 1.75e+05  -1.0 2.53e-04    -  1.00e+00 3.69e-01h  1
+  12  1.5879010e+01 1.60e-06 1.28e+05  -1.0 1.72e-04    -  1.00e+00 7.80e-01h  1
+  13  1.5879020e+01 3.81e-06 1.56e+06  -1.0 3.50e-05    -  1.00e+00 1.87e-01f  2
+  14  1.5879051e+01 4.78e-05 1.11e+06  -1.0 2.99e-05    -  1.00e+00 6.96e-01h  1
+  15  1.5879062e+01 1.44e-03 1.36e+06  -1.0 9.40e-06    -  1.00e+00 8.12e-01h  1
+  16  1.5879062e+01 2.87e-02 8.62e+06  -1.0 1.62e-06    -  1.92e-02 4.33e-02f  1
+  17  1.5879063e+01 1.32e-01 1.01e+07  -1.0 1.46e-06    -  6.36e-01 3.00e-01f  2
+  18  1.5879063e+01 1.29e-01 2.78e+07  -1.0 1.07e-06    -  9.78e-01 1.95e-02h  4
+  19  1.5879063e+01 1.24e-01 1.24e+07  -1.0 1.75e-06    -  2.76e-01 4.26e-02f  4
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  20  1.5879063e+01 1.26e-01 1.32e+07  -1.0 1.29e-05    -  3.14e-02 1.83e-03f  9
+  21  1.5879063e+01 1.17e-01 1.57e+07  -1.0 2.28e-06    -  1.00e+00 7.58e-02h  2
+  22  1.5879063e+01 1.07e-01 3.76e+07  -1.0 1.89e-05    -  4.56e-02 2.82e-03f  4
+  23  1.5879063e+01 1.06e-01 2.43e+07  -1.0 1.70e-05    -  1.00e+00 1.61e-02f  2
+  24  1.5879065e+01 1.68e-05 2.51e+05  -1.0 1.27e-06    -  9.90e-01 1.00e+00f  1
+  25  1.5879065e+01 1.72e-02 8.22e+06  -1.0 8.28e-07    -  7.19e-01 1.03e-01f  4
+  26  1.5879065e+01 3.84e-02 1.00e-06  -1.0 3.72e-07    -  1.00e+00 1.00e+00h  1
+  27  6.0755749e+00 4.35e-03 7.70e+00  -5.7 8.91e-01    -  7.66e-01 8.87e-01f  1
+  28  4.6118447e+00 1.80e-03 3.16e+00  -5.7 4.09e+00    -  5.88e-01 5.87e-01f  1
+  29  3.9999030e+00 7.23e-04 1.28e+00  -5.7 2.28e+00    -  6.37e-01 5.99e-01f  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  30  3.7718093e+00 2.93e-04 9.51e+00  -5.7 1.21e+00    -  7.41e-01 5.97e-01f  1
+  31  3.6552267e+00 5.22e-05 5.20e+00  -5.7 3.59e-01    -  8.96e-01 8.30e-01f  1
+  32  3.6349311e+00 5.96e-06 2.12e+00  -5.7 1.07e-01    -  9.67e-01 9.37e-01f  1
+  33  3.6335250e+00 5.77e-06 5.92e-09  -5.7 6.81e-03    -  1.00e+00 1.00e+00f  1
+
+Number of Iterations....: 33
+
+                                   (scaled)                 (unscaled)
+Objective...............:   3.6335250389543554e+00    3.6335250389543554e+00
+Dual infeasibility......:   5.9181336261384475e-09    5.9181336261384475e-09
+Constraint violation....:   3.8756031717213091e-09    5.7667493820190430e-06
+Variable bound violation:   9.9995421553925549e-09    9.9995421553925549e-09
+Complementarity.........:   2.0320588205471601e-06    2.0320588205471601e-06
+Overall NLP error.......:   3.8756031717213091e-09    5.7667493820190430e-06
+
+
+Number of objective function evaluations             = 67
+Number of objective gradient evaluations             = 34
+Number of equality constraint evaluations            = 67
+Number of inequality constraint evaluations          = 67
+Number of equality constraint Jacobian evaluations   = 34
+Number of inequality constraint Jacobian evaluations = 34
+Number of Lagrangian Hessian evaluations             = 33
+Total seconds in IPOPT                               = 0.125
+
+EXIT: Optimal Solution Found.
+         nlp  :   t_proc      (avg)   t_wall      (avg)    n_eval
+       nlp_f  |   2.00ms ( 29.85us)   2.77ms ( 41.37us)        67
+       nlp_g  |   8.00ms (119.40us)   3.13ms ( 46.72us)        67
+  nlp_grad_f  |   8.00ms (222.22us)   4.21ms (116.89us)        36
+  nlp_hess_l  |   4.00ms (121.21us)   7.83ms (237.42us)        33
+   nlp_jac_g  |   8.00ms (228.57us)   8.10ms (231.49us)        35
+       total  | 122.00ms (122.00ms) 125.55ms (125.55ms)         1
+This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
+
+Number of nonzeros in equality constraint Jacobian...:     1293
+Number of nonzeros in inequality constraint Jacobian.:      160
+Number of nonzeros in Lagrangian Hessian.............:       53
+
+Total number of variables............................:      594
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:      215
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:      540
+Total number of inequality constraints...............:      162
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:      108
+        inequality constraints with only upper bounds:       54
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  7.0538270e+01 8.00e-02 1.73e-01  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  7.0534916e+01 7.99e-02 1.48e+01  -1.0 7.93e+00    -  7.94e-02 1.70e-03h  1
+   2  7.0350994e+01 7.30e-02 9.21e+01  -1.0 8.39e+00    -  5.15e-01 8.64e-02f  1
+   3  6.8861929e+01 3.37e-02 1.17e+02  -1.0 1.07e+01    -  9.06e-01 5.38e-01h  12026-06-16 12:12:30,747 INFO Solver succeeded with status Solve_Succeeded (0.089266 seconds).
+2026-06-16 12:12:30,747 INFO Done with optimize()
+2026-06-16 12:12:30,748 INFO Extracting results
+2026-06-16 12:12:30,748 INFO Done extracting results
+2026-06-16 12:12:30,755 INFO Done goal programming
+
+   4  6.8790183e+01 1.56e-02 2.55e+02  -1.0 3.36e-01    -  1.00e+00 5.38e-01h  1
+   5  6.8755608e+01 5.74e-03 4.34e+02  -1.0 1.40e-01    -  1.00e+00 6.32e-01h  1
+   6  6.8743993e+01 2.61e-03 1.28e+03  -1.0 5.13e-02    -  1.00e+00 5.46e-01h  1
+   7  6.8738272e+01 9.76e-04 2.26e+03  -1.0 2.33e-02    -  1.00e+00 6.26e-01h  1
+   8  6.8736230e+01 4.24e-04 5.30e+03  -1.0 8.73e-03    -  1.00e+00 5.66e-01h  1
+   9  6.8735304e+01 1.60e-04 9.11e+03  -1.0 3.79e-03    -  1.00e+00 6.23e-01h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  6.8734933e+01 5.86e-05 1.30e+04  -1.0 1.43e-03    -  1.00e+00 6.33e-01h  1
+  11  6.8734824e+01 2.82e-05 2.30e+04  -1.0 5.24e-04    -  1.00e+00 5.20e-01h  1
+  12  6.8734758e+01 1.02e-05 3.37e+04  -1.0 2.52e-04    -  1.00e+00 6.38e-01h  1
+  13  6.8734735e+01 9.70e-05 2.01e+05  -1.0 9.13e-05    -  1.00e+00 5.56e-01h  1
+  14  6.8734727e+01 1.43e-03 3.67e+05  -1.0 4.05e-05    -  1.00e+00 5.51e-01h  1
+  15  6.8734721e+01 3.11e-02 5.02e+05  -1.0 1.82e-05    -  1.00e+00 7.15e-01h  1
+  16  6.8734721e+01 3.15e-02 4.87e+06  -1.0 5.19e-06    -  1.00e+00 2.92e-02f  5
+  17  6.8734719e+01 1.56e-04 1.00e-06  -1.0 5.63e-06    -  1.00e+00 1.00e+00f  1
+  18  6.8640779e+01 3.49e-02 3.26e+03  -5.7 3.76e-01    -  9.75e-01 1.00e+00f  1
+  19  6.8637760e+01 6.32e-04 8.81e+01  -5.7 1.21e-02    -  9.74e-01 1.00e+00f  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  20  6.8637623e+01 5.46e-04 2.42e+02  -5.7 5.56e-04    -  8.58e-01 1.00e+00h  1
+  21  6.8637614e+01 1.75e-04 4.19e+02  -5.7 7.06e-05    -  6.06e-01 1.00e+00h  1
+  22  6.8637598e+01 7.71e+01 5.09e+09  -5.7 1.08e-04    -  2.57e-04 1.00e+00f  1
+  23  6.8637589e+01 5.37e-06 6.45e+04  -5.7 5.94e-05    -  9.40e-01 1.00e+00h  1
+  24  6.8637581e+01 7.45e-09 2.13e-11  -5.7 5.92e-05    -  1.00e+00 1.00e+00h  1
+  25  6.8637552e+01 1.49e-08 2.24e+02  -8.6 1.78e-04    -  7.72e-01 1.00e+00f  1
+  26  6.8637539e+01 1.49e-08 8.50e+01  -8.6 2.07e-04    -  6.21e-01 8.01e-01f  1
+  27  6.8637536e+01 7.45e-09 1.13e+01  -8.6 3.22e-05    -  8.68e-01 1.00e+00f  1
+  28  6.8637536e+01 1.49e-08 2.54e-14  -8.6 4.61e-06    -  1.00e+00 1.00e+00h  1
+
+Number of Iterations....: 28
+
+                                   (scaled)                 (unscaled)
+Objective...............:   6.8637535618534216e+01    6.8637535618534216e+01
+Dual infeasibility......:   2.5424107263916085e-14    2.5424107263916085e-14
+Constraint violation....:   5.9604644775390622e-14    1.4901161193847656e-08
+Variable bound violation:   8.7470482211222664e-09    8.7470482211222664e-09
+Complementarity.........:   3.8437787554062806e-09    3.8437787554062806e-09
+Overall NLP error.......:   3.8437787554062806e-09    1.4901161193847656e-08
+
+
+Number of objective function evaluations             = 34
+Number of objective gradient evaluations             = 29
+Number of equality constraint evaluations            = 34
+Number of inequality constraint evaluations          = 34
+Number of equality constraint Jacobian evaluations   = 29
+Number of inequality constraint Jacobian evaluations = 29
+Number of Lagrangian Hessian evaluations             = 28
+Total seconds in IPOPT                               = 0.089
+
+EXIT: Optimal Solution Found.
+         nlp  :   t_proc      (avg)   t_wall      (avg)    n_eval
+       nlp_f  |        0 (       0)   1.30ms ( 38.29us)        34
+       nlp_g  |   2.00ms ( 58.82us)   1.47ms ( 43.26us)        34
+  nlp_grad_f  |   1.00ms ( 32.26us)   3.13ms (100.84us)        31
+  nlp_hess_l  |   6.00ms (214.29us)   6.02ms (215.04us)        28
+   nlp_jac_g  |   8.00ms (266.67us)   6.03ms (201.07us)        30
+       total  |  90.00ms ( 90.00ms)  89.27ms ( 89.27ms)         1

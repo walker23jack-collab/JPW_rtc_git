@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: rtc-tools-interface
+Version: 0.10.1
+Summary: Toolbox for user interfaces for RTC-Tools
+Home-page: UNKNOWN
+Author: Deltares
+Maintainer: Deltares
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.9
+License-File: COPYING.LESSER
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: plotly
+Requires-Dist: pydantic
+Requires-Dist: casadi!=3.6.6
+Requires-Dist: rtc-tools>=2.7.0a3
+
+UNKNOWN
+

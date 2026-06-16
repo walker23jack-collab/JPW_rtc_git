@@ -1,0 +1,132 @@
+2026-01-29 20:06:05,185 INFO Using RTC-Tools 2.7.1.
+2026-01-29 20:06:05,194 INFO Loading/compiling model GroundwaterStorage.
+2026-01-29 20:06:05,222 INFO Starting goal programming
+2026-01-29 20:06:05,222 INFO Solving goals at priority 10
+2026-01-29 20:06:05,222 INFO Entering optimize()
+2026-01-29 20:06:05,222 INFO Transcribing problem with a DAE of 8 equations, 54 collocation points, and 9 free variables
+2026-01-29 20:06:05,226 WARNING The DAE residual contains equations that are not affine. There is therefore no guarantee that the optimization problem is convex. This will, in general, result in the existence of multiple local optima and trouble finding a feasible initial solution.
+CasADi - 2026-01-29 20:06:05 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+2026-01-29 20:06:05,228 INFO Transcribing ensemble member 1/1
+2026-01-29 20:06:05,228 INFO Interpolating states
+2026-01-29 20:06:05,229 INFO Aggregating and de-scaling variables
+2026-01-29 20:06:05,230 INFO Mapping
+2026-01-29 20:06:05,230 INFO Composing NLP segment
+2026-01-29 20:06:05,231 INFO Creating NLP dictionary
+2026-01-29 20:06:05,231 INFO Done transcribing problem
+CasADi - 2026-01-29 20:06:05 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+CasADi - 2026-01-29 20:06:05 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+CasADi - 2026-01-29 20:06:05 WARNING("CasADi was not compiled with WITH_OPENMP=ON. Falling back to serial evaluation.") [.../casadi/core/map.cpp:406]
+2026-01-29 20:06:05,245 INFO Calling solver
+2026-01-29 20:06:05,306 INFO Solver succeeded with status Solve_Succeeded (0.059077 seconds).
+2026-01-29 20:06:05,306 INFO Done with optimize()
+2026-01-29 20:06:05,307 INFO Extracting results
+2026-01-29 20:06:05,308 INFO Done extracting results
+2026-01-29 20:06:05,311 ERROR 'PumpDischarge'
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit https://github.com/coin-or/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.14.11, running with linear solver MUMPS 5.4.1.
+
+Number of nonzeros in equality constraint Jacobian...:     1023
+Number of nonzeros in inequality constraint Jacobian.:      108
+Number of nonzeros in Lagrangian Hessian.............:       53
+
+Total number of variables............................:      540
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:      269
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:      432
+Total number of inequality constraints...............:       54
+        inequality constraints with only lower bounds:       54
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:        0
+
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  5.3460001e+01 5.00e+07 4.85e-01  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0
+   1  5.3454212e+01 4.99e+07 1.25e+00  -1.0 5.00e+07    -  3.41e-03 1.53e-03h  1
+   2  5.3377138e+01 4.92e+07 8.59e+00  -1.0 4.99e+07    -  5.57e-03 1.35e-02h  1
+   3  5.3332474e+01 4.91e+07 9.29e+00  -1.0 4.92e+07    -  6.21e-03 3.63e-03h  1
+   4  5.3211636e+01 4.86e+07 9.46e+00  -1.0 4.91e+07    -  1.17e-02 1.04e-02h  1
+   5  5.2950094e+01 4.77e+07 8.00e+00  -1.0 4.86e+07    -  8.43e-03 1.83e-02h  1
+   6  5.2707793e+01 4.68e+07 7.86e+00  -1.0 4.77e+07    -  1.75e-02 1.75e-02h  1
+   7  5.2277471e+01 4.53e+07 6.94e+00  -1.0 4.68e+07    -  1.92e-02 3.38e-02h  1
+   8  5.1605184e+01 4.27e+07 5.65e+00  -1.0 4.53e+07    -  1.72e-02 5.73e-02h  1
+   9  5.0742077e+01 3.91e+07 4.74e+00  -1.0 4.27e+07    -  2.25e-02 8.33e-02h  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  5.0086166e+01 3.64e+07 4.42e+00  -1.0 3.91e+07    -  3.48e-02 6.81e-02h  1
+  11  4.9011000e+01 3.25e+07 3.91e+00  -1.0 3.64e+07    -  9.81e-02 1.09e-01h  1
+  12  4.5554413e+01 2.23e+07 2.44e+00  -1.0 3.25e+07    -  1.58e-01 3.13e-01h  1
+  13  3.2572567e+01 4.80e+06 2.80e+00  -1.0 2.23e+07    -  3.77e-01 1.00e+00h  1
+  14  1.5904803e+01 7.45e-09 2.11e+00  -1.0 2.44e+00    -  3.28e-01 1.00e+00f  1
+  15  2.3028622e+00 7.45e-09 9.50e-01  -1.0 2.58e+00    -  4.61e-01 9.39e-01f  1
+  16  6.5471889e+00 7.45e-09 3.37e-01  -1.0 4.33e+00    -  6.39e-01 1.00e+00f  1
+  17  1.2162884e+00 7.45e-09 2.97e-02  -1.7 1.84e+00    -  9.24e-01 1.00e+00f  1
+  18  1.3694507e-01 1.49e-08 3.79e-04  -2.5 2.09e+00    -  9.90e-01 1.00e+00f  1
+  19  8.2866949e-03 7.45e-09 4.44e-05  -3.8 1.61e+00    -  9.85e-01 1.00e+00f  1
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  20  9.9334741e-05 7.45e-09 1.16e-08  -5.7 3.14e-01    -  1.00e+00 1.00e+00f  1
+  21 -4.0459437e-07 7.45e-09 2.51e-14  -8.6 4.54e-02    -  1.00e+00 1.00e+00f  1
+  22 -4.9090909e-07 7.45e-09 1.17e-10  -9.0 1.22e+01    -  9.63e-01 1.00e+00h  1
+
+Number of Iterations....: 22
+
+                                   (scaled)                 (unscaled)
+Objective...............:  -4.9090909092033071e-07   -4.9090909092033071e-07
+Dual infeasibility......:   1.1690512466545906e-10    1.1690512466545906e-10
+Constraint violation....:   4.2574746268136162e-14    7.4505805969238281e-09
+Variable bound violation:   9.0909090935420034e-09    9.0909090935420034e-09
+Complementarity.........:   3.2940373640774261e-09    3.2940373640774261e-09
+Overall NLP error.......:   3.2940373640774261e-09    7.4505805969238281e-09
+
+
+Number of objective function evaluations             = 23
+Number of objective gradient evaluations             = 23
+Number of equality constraint evaluations            = 23
+Number of inequality constraint evaluations          = 23
+Number of equality constraint Jacobian evaluations   = 23
+Number of inequality constraint Jacobian evaluations = 23
+Number of Lagrangian Hessian evaluations             = 22
+Total seconds in IPOPT                               = 0.059
+
+EXIT: Optimal Solution Found.
+         nlp  :   t_proc      (avg)   t_wall      (avg)    n_eval
+       nlp_f  |        0 (       0) 961.00us ( 41.78us)        23
+       nlp_g  |   2.00ms ( 86.96us)   1.15ms ( 50.09us)        23
+  nlp_grad_f  |   2.00ms ( 80.00us)   2.73ms (109.28us)        25
+  nlp_hess_l  |   7.00ms (318.18us)   5.13ms (233.36us)        22
+   nlp_jac_g  |   5.00ms (208.33us)   5.39ms (224.67us)        24
+       total  |  59.00ms ( 59.00ms)  59.08ms ( 59.08ms)         1
+Traceback (most recent call last):
+  File "c:\_Local\GitHubDeltares\Deltares-rtc-tools-proprietary\case-studies\GroundwaterReservoirIJssel\src\GroundwaterStorage.py", line 76, in <module>
+    run_optimization_problem(GroundwaterStorage, log_level=logging.INFO, plotting_library="matplotlib")
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\_Local\GitHubDeltares\Deltares-rtc-tools-proprietary\case-studies\GroundwaterReservoirIJssel\WinPython\python\Lib\site-packages\rtctools\util.py", line 145, in run_optimization_problem
+    prob.optimize()
+    ~~~~~~~~~~~~~^^
+  File "c:\_Local\GitHubDeltares\Deltares-rtc-tools-proprietary\case-studies\GroundwaterReservoirIJssel\WinPython\python\Lib\site-packages\rtctools\optimization\goal_programming_mixin.py", line 745, in optimize
+    self.priority_completed(priority)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "c:\_Local\GitHubDeltares\Deltares-rtc-tools-proprietary\case-studies\GroundwaterReservoirIJssel\WinPython\python\Lib\site-packages\rtctools_diagnostics\export_results.py", line 28, in priority_completed
+    super().priority_completed(priority)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "c:\_Local\GitHubDeltares\Deltares-rtc-tools-proprietary\case-studies\GroundwaterReservoirIJssel\WinPython\python\Lib\site-packages\rtctools_interface\optimization\plot_mixin.py", line 25, in priority_completed
+    super().priority_completed(priority)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "c:\_Local\GitHubDeltares\Deltares-rtc-tools-proprietary\case-studies\GroundwaterReservoirIJssel\WinPython\python\Lib\site-packages\rtctools_interface\optimization\goal_generator_mixin.py", line 80, in priority_completed
+    self.store_performance_metrics(priority)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "c:\_Local\GitHubDeltares\Deltares-rtc-tools-proprietary\case-studies\GroundwaterReservoirIJssel\WinPython\python\Lib\site-packages\rtctools_interface\optimization\goal_generator_mixin.py", line 69, in store_performance_metrics
+    next_row = get_performance_metrics(results, goal, targets.get(str(goal.goal_id)))
+  File "c:\_Local\GitHubDeltares\Deltares-rtc-tools-proprietary\case-studies\GroundwaterReservoirIJssel\WinPython\python\Lib\site-packages\rtctools_interface\optimization\goal_performance_metrics.py", line 121, in get_performance_metrics
+    return performance_metrics_minmaximization(results, goal)
+  File "c:\_Local\GitHubDeltares\Deltares-rtc-tools-proprietary\case-studies\GroundwaterReservoirIJssel\WinPython\python\Lib\site-packages\rtctools_interface\optimization\goal_performance_metrics.py", line 63, in performance_metrics_minmaximization
+    state_timeseries = results[goal.state]
+                       ~~~~~~~^^^^^^^^^^^^
+  File "c:\_Local\GitHubDeltares\Deltares-rtc-tools-proprietary\case-studies\GroundwaterReservoirIJssel\WinPython\python\Lib\site-packages\rtctools\_internal\alias_tools.py", line 131, in __getitem__
+    val = self.__d[var]
+          ~~~~~~~~^^^^^
+KeyError: 'PumpDischarge'
