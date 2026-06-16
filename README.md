@@ -1,2 +1,2 @@
 # JPW_rtc
-Jack Walker GIThub tutorial
+This github will include JPW's code changes for the StrategicHeart project
