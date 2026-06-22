@@ -1,6 +1,0 @@
-id,state,active,goal_type,function_min,function_max,function_nominal,target_data_type,target_min,target_max,priority,weight,order
-MinimumBaseFlow,RiverAquiferFlow,0,range,-1,1.5,0.5,value,0.1,,10,1,1
-RiverIntakeMax,RiverIntakeDischarge,1,range,0,40,10,timeseries,,RiverIntakeMax,30,1,1
-GroundwaterLevelRange,GroundwaterLevel,1,range,0,10,4.3,timeseries,GroundwaterLevel_min,GroundwaterLevel_max,20,1,1
-GroundwaterLevelTarget,GroundwaterLevel,1,range,0,10,4.3,value,4.3,4.3,40,1,1
-MinimizeRiverIntake,RiverIntakeDischarge,1,minimization_path,,,4,,,,50,1,1
