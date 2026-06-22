@@ -1,6 +1,7 @@
 id,y_axis_title,variables_style_1,variables_style_2,custom_title,specified_in
-RiverIntakeMax,Discharge (m$^3$),,,,goal_generator
-GroundwaterLevelRange,Elevation (m),,,,goal_generator
-x,Discharge (m$^3$),,"GroundwaterExtractionCMS, GroundwaterRechargeCMS",,python
-GroundwaterLevelTarget,Elevation (m),,,,goal_generator
-MinimizeRiverIntake,Discharge (m$^3$),,,,goal_generator
+MeetDemand,Discharge (m$^3$/s),QDistribution,Qdem,Demand satisfaction,goal_generator
+ProcessBasinRange,Volume (m$^3$),ProcessBasinVolume,,Process basin storage,goal_generator
+ASRStorageRange,Volume (m$^3$),ASRVolume,,ASR storage,goal_generator
+TreatmentTarget,Discharge (m$^3$/s),QTreatment,QTreatmentTarget,Treatment flow,goal_generator
+MinimizeQint,Discharge (m$^3$/s),Qint,,River intake,goal_generator
+ASRFlows,Discharge (m$^3$/s),QASRInjection,QASRExtracted,ASR flows,python

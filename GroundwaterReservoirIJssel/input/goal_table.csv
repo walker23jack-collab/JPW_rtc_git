@@ -1,6 +1,7 @@
 id,state,active,goal_type,function_min,function_max,function_nominal,target_data_type,target_min,target_max,priority,weight,order
-MinimumBaseFlow,RiverAquiferFlow,0,range,-1,1.5,0.5,value,0.1,,10,1,1
-RiverIntakeMax,RiverIntakeDischarge,1,range,0,40,10,timeseries,,RiverIntakeMax,20,1,1
-GroundwaterLevelRange,GroundwaterLevel,1,range,0,10,4.3,timeseries,GroundwaterLevel_min,GroundwaterLevel_max,30,1,1
-GroundwaterLevelTarget,GroundwaterLevel,1,range,0,10,4.3,value,4.3,4.3,40,1,1
-MinimizeRiverIntake,RiverIntakeDischarge,1,minimization_path,,,4,,,,50,1,1
+MeetDemand,QDistribution,1,range,0,3,1.6,timeseries,Qdem,Qdem,10,1,1
+QintCapacity,Qint,1,range,0,2.5,1.5,timeseries,,QintMax,30,1,1
+ProcessBasinRange,ProcessBasinVolume,1,range,-1,3000001,3000000,timeseries,ProcessBasinVolume_min,ProcessBasinVolume_max,40,1,1
+ASRStorageRange,ASRVolume,1,range,-1,5000001,5000000,timeseries,ASRVolume_min,ASRVolume_max,50,1,1
+TreatmentTarget,QTreatment,1,range,0,2.5,1.585,timeseries,QTreatmentTarget,QTreatmentTarget,20,1,1
+MinimizeQASR,QASRExtracted,1,minimization_path,0,2,1,,,,25,1,1
