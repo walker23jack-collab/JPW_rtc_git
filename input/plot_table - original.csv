@@ -1,0 +1,6 @@
+id,y_axis_title,variables_style_1,variables_style_2,custom_title,specified_in
+RiverIntakeMax,Discharge (m$^3$),,,,goal_generator
+GroundwaterLevelRange,Elevation (m),,,,goal_generator
+x,Discharge (m$^3$),,"GroundwaterExtractionCMS, GroundwaterRechargeCMS",,python
+GroundwaterLevelTarget,Elevation (m),,,,goal_generator
+MinimizeRiverIntake,Discharge (m$^3$),,,,goal_generator

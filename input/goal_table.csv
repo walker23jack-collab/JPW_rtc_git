@@ -1,0 +1,11 @@
+id,state,active,goal_type,function_min,function_max,function_nominal,target_data_type,target_min,target_max,priority,weight,order
+MeetDemand,QDistribution,1,range,0,3,1.5,timeseries,Qdem,Qdem,10,1,1
+TreatmentCapacity,QTreatment,1,range,0,3,1.585,value,,1.585,15,1,1
+MaximizeTreatment,QTreatment,1,maximization_path,0,3,1.585,value,,,20,1,1
+MinimizeQASR,QASRExtracted,1,minimization_path,0,2,1,,,,25,1,1
+QintCapacity,Qint,1,range,0,2.5,1.6,timeseries,,QintMax,30,1,1
+ProcessBasinRange,ProcessBasinVolume,1,range,-1,3000005,1500000,timeseries,ProcessBasinVolume_min,ProcessBasinVolume_max,40,1,1
+ASRStorageRange,ASRVolume,1,range,-1,5000001,2500000,timeseries,ASRVolume_min,ASRVolume_max,41,1,1
+FillProcessBasin,ProcessBasinVolume,1,range,-1,3000005,1500000,value,2999000,3000000,45,1,1
+MaximizeQint,Qint,1,maximization_path,0,3,1.585,timeseries,,QintMax,60,1,1
+MinimizeQAdd,Qadd,1,minimization_path,0,3,0.158,value,,,70,1,1

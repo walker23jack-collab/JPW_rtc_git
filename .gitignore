@@ -1,0 +1,21 @@
+# Environment
+WinPython/
+Veusz/
+
+# Outputs
+output/
+*.png
+*.log
+
+# VS Code
+.vscode/
+
+# Installers
+*.exe
+
+# Python
+__pycache__/
+*.pyc
+
+logRTC-Tools.txt
+*.pymoca_cache
