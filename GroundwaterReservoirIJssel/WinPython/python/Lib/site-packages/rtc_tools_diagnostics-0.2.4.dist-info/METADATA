@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: rtc-tools-diagnostics
+Version: 0.2.4
+Summary: Toolbox for diagnostics for RTC-Tools
+Home-page: UNKNOWN
+Author: Deltares
+Maintainer: Deltares
+License: UNKNOWN
+Platform: Windows
+Platform: Linux
+Platform: Mac OS-X
+Platform: Unix
+Requires-Python: >=3.5
+License-File: COPYING.LESSER
+Requires-Dist: rtc-tools>=2.5.0
+Requires-Dist: tabulate
+Requires-Dist: casadi!=3.6.6
+Requires-Dist: numpy
+Requires-Dist: pandas
+
+This toolbox includes several utilities to analyze the results of an RTC-Tools optimization run.
+
+
