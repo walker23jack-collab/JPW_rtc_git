@@ -18,3 +18,4 @@ __pycache__/
 *.pyc
 
 logRTC-Tools.txt
+*.pymoca_cache
