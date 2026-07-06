@@ -14,7 +14,7 @@ import numpy as np
 logger = logging.getLogger("rtctools")
 
 
-class CopyGroundwaterStorage(
+class StrategicHeartWeekly(
     ExportResultsEachPriorityMixin,
     GoalGeneratorMixin,
     PlotMixin,
@@ -33,6 +33,17 @@ class CopyGroundwaterStorage(
 
     def post(self):
         results = self.extract_results()
+       # rate of change 
+        roc_pct = np.zeros(len(results["QTreatment"]))
+        roc_pct[1:] = (
+            np.diff(results["QTreatment"])
+            / np.maximum(results["QTreatment"][:-1], 1e-12)
+        ) * 100
+
+        results["QTreatmentRateChangePct"] = roc_pct
+        print("QTreatment min:", np.min(results["QTreatment"]))
+        print("QTreatment max:", np.max(results["QTreatment"]))
+        print("QTreatment range:", np.max(results["QTreatment"]) - np.min(results["QTreatment"]))
         t_datetime = np.array(self.io.datetimes)
         legend_loc = "upper left"
 
@@ -79,18 +90,24 @@ class CopyGroundwaterStorage(
 
         # 3. Treatment and distribution
         ax = plt.subplot(4, 1, 3)
+
+        q_treat_plot = np.round(results["QTreatment"], 6)
+        q_dist_plot = np.round(results["QDistribution"], 6)
+
         plt.plot(
             t_datetime,
-            results["QTreatment"],
+            q_treat_plot,
             label="Treatment flow",
             linewidth=2,
         )
+
         plt.plot(
             t_datetime,
-            results["QDistribution"],
+            q_dist_plot,
             label="Distribution flow",
             linewidth=2,
         )
+
         plt.plot(
             t_datetime,
             self.get_timeseries("Qdem"),
@@ -98,6 +115,7 @@ class CopyGroundwaterStorage(
             linewidth=1,
             linestyle="--",
         )
+
         ax.set_ylabel("Discharge (m³/s)")
         plt.legend(loc=legend_loc)
         plt.gca().xaxis.set_major_formatter(dateFormat)
@@ -141,41 +159,53 @@ class CopyGroundwaterStorage(
 
             asr_error[i] = (
                 results["ASRVolume"][i]
-                - results["ASRVolume"][i-1]
+                - results["ASRVolume"][i - 1]
                 - (
                     results["QASRInjection"][i]
                     - results["QASRExtracted"][i]
                 ) * dt
             )
 
+            # Process basin loses raw treatment intake, not usable treated output
             pb_error[i] = (
                 results["ProcessBasinVolume"][i]
-                - results["ProcessBasinVolume"][i-1]
+                - results["ProcessBasinVolume"][i - 1]
                 - (
                     results["Qint"][i]
                     + results["Qadd"][i]
-                    - results["QTreatment"][i]
+                    - results["QTreatmentRaw"][i]
                 ) * dt
             )
+
+        # Treatment loss should equal 20% of raw treatment intake
+        treatment_loss_error = (
+            results["QTreatmentLossFlow"]
+            - 0.2 * results["QTreatmentRaw"]
+        )
 
         print("\n--- Mass Balance Check ---")
         print("Max ASR error:", np.max(np.abs(asr_error)), "m³")
         print("Max PB error :", np.max(np.abs(pb_error)), "m³")
-        
+        print(
+            "Max treatment-loss error:",
+            np.max(np.abs(treatment_loss_error)),
+            "m³/s",
+        )
+
         shortage = (
             self.get_timeseries("Qdem").values
             - results["QDistribution"]
         )
 
-        print("Maximum unmet demand:", np.max(shortage), "m3/s")
-        print("Maximum oversupply:", -np.min(shortage), "m3/s")
+        print("Maximum unmet demand:", np.max(shortage), "m³/s")
+        print("Maximum oversupply:", -np.min(shortage), "m³/s")
 
         super().post()
 
 
 if __name__ == "__main__":
     run_optimization_problem(
-        CopyGroundwaterStorage,
+        StrategicHeartWeekly,
         log_level=logging.INFO,
         plotting_library="matplotlib",
     )
