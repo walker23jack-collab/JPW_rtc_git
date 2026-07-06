@@ -1,7 +1,7 @@
-id,y_axis_title,variables_style_1,variables_style_2,custom_title,specified_in
-MeetDemand,Discharge (m$^3$/s),QDistribution,Qdem,Demand satisfaction,goal_generator
-ProcessBasinRange,Volume (m$^3$),ProcessBasinVolume,,Process basin storage,goal_generator
-ASRStorageRange,Volume (m$^3$),ASRVolume,,ASR storage,goal_generator
-TreatmentCapacity,Discharge (m$^3$/s),QTreatment,QTreatmentTarget,Treatment flow,goal_generator
-ASRFlows,Discharge (m$^3$/s),QASRInjection,QASRExtracted,ASR flows,python
-MaximizeQint,Discharge (m$^3$/s),Qint,Qadd,Source inflows,goal_generator
+id,y_axis_title,variables_style_1,variables_style_2,variables_style_3,custom_title,specified_in
+StorageVolumes,Volume (m$^3$),ProcessBasinVolume,ASRVolume,,Storage volumes,python
+ASRFlows,Discharge (m$^3$/s),QASRInjection,QASRExtracted,,ASR flows,python
+DemandRange,Discharge (m$^3$/s),QDistribution,QDemand,,Demand satisfaction,python
+TreatmentCapacity,Discharge (m$^3$/s),QTreatment,QTreatmentTarget,,Treatment flow,goal_generator
+SourceInflows,Discharge (m$^3$/s),Qint,QintMax,Qadd,Source inflows and limits,python
+MinimizeTreatmentChange,Treatment ramp rate (m$^3$/s$^2$),,,,Treatment rate of change,goal_generator

@@ -1,4 +1,4 @@
-model CopyGroundwaterStorage
+model StrategicHeartHourly
   import SI = Modelica.Units.SI;
 
   Deltares.ChannelFlow.SimpleRouting.BoundaryConditions.Inflow RiverIntake annotation(
@@ -15,7 +15,7 @@ model CopyGroundwaterStorage
   ) annotation(
     Placement(visible = true, transformation(origin = {-22, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 
-  Deltares.ChannelFlow.SimpleRouting.Nodes.Node TreatmentPlant(nin = 1, nout = 2) annotation(
+  Deltares.ChannelFlow.SimpleRouting.Nodes.Node TreatmentPlant(nin = 1, nout = 3) annotation(
     Placement(visible = true, transformation(origin = {18, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 
   Deltares.ChannelFlow.SimpleRouting.Storage.Storage ASRwell(
@@ -27,12 +27,15 @@ model CopyGroundwaterStorage
   Deltares.ChannelFlow.SimpleRouting.BoundaryConditions.Terminal WaterDemand annotation(
     Placement(visible = true, transformation(origin = {90, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 
-  // Inputs
+  Deltares.ChannelFlow.SimpleRouting.BoundaryConditions.Terminal QTreatmentLossBoundary annotation(
+  Placement(visible = true, transformation(origin = {34, 36}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+
+// Inputs
   input SI.VolumeFlowRate Qdem(fixed = true);
   input SI.VolumeFlowRate Qint(fixed = false, min = 0);
-  input SI.VolumeFlowRate Qadd(fixed = false, min = 0, max =0.1);
+  input SI.VolumeFlowRate Qadd(fixed = false, min = 0, max =0.1585);
 
-  // Outputs
+// Outputs
   output SI.Volume ProcessBasinVolume;
   output SI.Volume ASRVolume;
   output SI.VolumeFlowRate QTreatment(min = 0, max = 1.585);
@@ -40,20 +43,39 @@ model CopyGroundwaterStorage
   output SI.VolumeFlowRate QASRInjection(min = 0);
   output SI.VolumeFlowRate QASRExtracted(min = 0);
   output SI.VolumeFlowRate QTreatmentDistributed(min = 0);
+  output SI.VolumeFlowRate QTreatmentRaw(min = 0);
+  output SI.VolumeFlowRate QTreatmentLossFlow(min = 0);
+  output SI.VolumeFlowRate QShortage(min = 0);
 
-equation
+  parameter Real treatment_efficiency = 0.8;
+  
+  equation
   RiverIntake.Q = Qint;
   AdditionalWater.Q = Qadd;
-  // WaterDemand.Q = Qdem;
-
+  QShortage = Qdem - QDistribution;
   ProcessBasinVolume = processbasin.V;
   ASRVolume = ASRwell.V;
-  QTreatmentDistributed = TreatmentPlant.QOut[2].Q;
+
+  // Raw water entering treatment from the process basin
+  QTreatmentRaw = TreatmentPlant.QIn[1].Q;
+
+  // Treatment plant outlet flows
   QASRInjection = TreatmentPlant.QOut[1].Q;
+  QTreatmentDistributed = TreatmentPlant.QOut[2].Q;
+  QTreatmentLossFlow = TreatmentPlant.QOut[3].Q;
+
+  // Usable treated water
   QTreatment = QTreatmentDistributed + QASRInjection;
 
+  // Treatment efficiency split
+  QTreatment = treatment_efficiency * QTreatmentRaw;
+  QTreatmentLossFlow = (1 - treatment_efficiency) * QTreatmentRaw;
+
+  // ASR extraction and distribution
   QASRExtracted = ASRwell.Q_release;
   QDistribution = QTreatmentDistributed + QASRExtracted;
+
+  // Demand terminal receives actual delivered water, not forced demand
   WaterDemand.Q = QDistribution;
 
   connect(RiverIntake.QOut, Processbasinnode.QIn[1]) annotation(
@@ -79,5 +101,6 @@ equation
 
   connect(DistributionNetwork.QOut[1], WaterDemand.QIn) annotation(
     Line(points = {{68, 0}, {82, 0}}));
-
-end CopyGroundwaterStorage;
+  connect(TreatmentPlant.QOut[3], QTreatmentLossBoundary.QIn) annotation(
+    Line(points = {{26, 0}, {26, 36}}));
+end StrategicHeartHourly;

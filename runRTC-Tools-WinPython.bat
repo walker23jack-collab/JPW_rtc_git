@@ -4,7 +4,7 @@ cd .\src
 set STARTTIME=%TIME%
 
 @echo + running RTC-Tools model
-"..\WinPython\python\python.exe" CopyGroundwaterStorage.py > ..\logRTC-Tools.txt 2>&1
+"..\WinPython\python\python.exe" StrategicHeartWeekly.py > ..\logRTC-Tools.txt 2>&1
 
 set ENDTIME=%TIME%
 

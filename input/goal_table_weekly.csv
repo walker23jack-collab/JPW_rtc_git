@@ -4,6 +4,7 @@ TreatmentCapacity,QTreatment,1,range,0,3,1.585,value,,1.585,20,1,1
 QintCapacity,Qint,1,range,0,3.1,2,timeseries,,QintMax,30,1,1
 ASRStorageRange,ASRVolume,1,range,-1,5000001,2500000,timeseries,ASRVolume_min,ASRVolume_max,40,1,1
 ProcessBasinRange,ProcessBasinVolume,1,range,-1,3000005,1500000,timeseries,ProcessBasinVolume_min,ProcessBasinVolume_max,50,1,1
-MinimizeShortage,QShortage,1,minimization_path,-0.1,3,0.001,value,,,60,1,1
 MaximizeTreatmentDistributed,QTreatmentDistributed,1,maximization_path,0,3,1,value,,,80,1,1
-MinimizeTreatmentChange,QTreatment,1,range_rate_of_change,-10,10,0.1,value,-0.000001,0.000001,70,1,1
+MaximizeQint,Qint,1,maximization_path,0,2.5,1.585,timeseries,,,90,1,1
+MinimizeShortage,QShortage,1,minimization_path,-0.1,3,0.001,value,,,70,1,1
+MaximizeTreatment,QTreatment,1,maximization_path,-0.1,3,1.585,value,,,60,1,1
