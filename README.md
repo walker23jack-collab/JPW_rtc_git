@@ -1,7 +1,7 @@
 # JPW_rtc
-This github includes JPW's model files for the StrategicHeart project
+This github includes Jack's model files for the StrategicHeart project.
 # Description
-The project assesses the capacity for addition of an ASR well to the Dutch water supply. Water is extracted from the IJssel river (**Qint**), brought to a processing basin, then to a treatment plant (**Qtreatment**). From the plant, water will either be distributed to the network (**Qdis**) or infiltrated at an ASR well (**QASRinfiltration**) for future extraction (**QASRExtracted**)
+The project assesses the capacity for addition of an Aquifer Storage and Recovery (ASR) well to the Dutch water supply. Water is extracted from the IJssel river (**Qint**), brought to a processing basin, then to a treatment plant (**Qtreatment**). From the plant, water will either be distributed to the network (**Qdis**) or infiltrated at an ASR well (**QASRinfiltration**) for future extraction (**QASRExtracted**)
 # Goals
 - Use ASR infiltration/extraction to absorb peak demands
 - Make Qtreatment as constant as possible
@@ -16,7 +16,8 @@ The project assesses the capacity for addition of an ASR well to the Dutch water
     - goal table
     - plot table
 3. Run RTC-Tools using batch command located within RTC tools download, ensuring that command has proper paths for the above files
-4. Further instruction located here: https://rtc-tools.readthedocs.io/en/stable/
+4. If unable to use batch command, can also run using the .py python script, ensuring to define a WinPython path
+5. Further instruction located here: https://rtc-tools.readthedocs.io/en/stable/
 
 # Documentation
 More information about project and its goals can be found in /documentation folder
