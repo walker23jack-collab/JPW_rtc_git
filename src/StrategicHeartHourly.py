@@ -192,6 +192,95 @@ class StrategicHeartHourly(
         print("Maximum unmet demand:", np.max(shortage), "m³/s")
         print("Maximum oversupply:", -np.min(shortage), "m³/s")
 
+ # Total ASR water supplied over the simulation
+
+        dt_seconds = 6 * 3600  # seconds per weekly timestep
+        total_asr_supplied = np.sum(results["QASRExtracted"]) * dt_seconds
+
+        # ==========================================================
+        # Reliability metrics
+        # ==========================================================
+
+        Qdem = self.get_timeseries("Qdem").values
+        Qsup = results["QDistribution"]
+
+        # Prevent tiny numerical negatives
+        shortage = np.maximum(Qdem - Qsup, 0.0)
+
+        # ---------- Volumetric reliability ----------
+
+        cum_demand = np.cumsum(Qdem)
+        cum_supplied = np.cumsum(Qsup)
+
+        volume_reliability = (
+            cum_supplied /
+            np.maximum(cum_demand, 1e-12)
+        )
+
+        volume_unmet_pct = 100 * (1 - volume_reliability)
+
+ # ---------- Instantaneous shortage ----------
+
+        instantaneous_unmet_pct = np.where(
+            Qdem > 1e-12,
+            100 * shortage / Qdem,
+            0.0
+        )
+
+        # Store for plotting
+
+        results["VolumeUnmetPct"] = volume_unmet_pct
+        results["InstantaneousUnmetPct"] = instantaneous_unmet_pct
+        results["QShortage"] = shortage
+
+       # rate of change 
+        roc_pct = np.zeros(len(results["QTreatment"]))
+        roc_pct[1:] = (
+            np.diff(results["QTreatment"])
+            / np.maximum(results["QTreatment"][:-1], 1e-12)
+        ) * 100
+
+        results["QTreatmentRateChangePct"] = roc_pct
+
+         # -------------------------
+        # Temporal reliability
+        # -------------------------
+        
+        # failure if supply is less than 99% of demand
+        
+        failure = shortage / np.maximum(Qdem,1e-12) > 0.01
+
+       
+
+# Total water supplied and ASR contribution.
+        total_water_supplied = np.sum(results["QDistribution"]) * dt_seconds
+        asr_percentage = (
+            100 * total_asr_supplied / total_water_supplied
+            if total_water_supplied > 0
+            else 0.0
+        )
+
+    
+
+        print("\nWater Supply Reliability")
+        print("-" * 55)
+        print(f"Total ASR water supplied : {total_asr_supplied / 1e6:8.3f} Mm³")
+        print(f"Maximum unmet demand     : {np.max(shortage):8.3f} m³/s")
+        print(f"Average unmet demand     : {np.mean(shortage):8.4f} m³/s")
+        print(f"Volumetric reliability   : {100-results['VolumeUnmetPct'][-1]:8.2f} %")
+        print(f"Total water supplied      : {total_water_supplied / 1e6:8.3f} Mm³")
+        print(f"Percentage supplied by ASR: {asr_percentage:8.2f} %")
+
+
+
+        print("\nTreatment Plant")
+        print("-" * 55)
+        print(f"Mean treatment flow      : {np.mean(results['QTreatment']):8.3f} m³/s")
+        print(f"Minimum treatment flow   : {np.min(results['QTreatment']):8.3f} m³/s")
+        print(f"Maximum treatment flow   : {np.max(results['QTreatment']):8.3f} m³/s")
+        print(f"Treatment range          : {np.ptp(results['QTreatment']):8.3f} m³/s")
+        
+
         super().post()
 
 

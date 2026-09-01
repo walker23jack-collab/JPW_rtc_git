@@ -1,7 +1,8 @@
-id,y_axis_title,variables_style_1,variables_style_2,variables_style_3,custom_title,specified_in
-StorageVolumes,Volume (m$^3$),ProcessBasinVolume,ASRVolume,,Storage volumes,python
-ASRFlows,Discharge (m$^3$/s),QASRInjection,QASRExtracted,,ASR flows,python
-DemandRange,Discharge (m$^3$/s),QDistribution,QDemand,,Demand satisfaction,python
-TreatmentCapacity,Discharge (m$^3$/s),QTreatment,QTreatmentTarget,,Treatment flow,goal_generator
-SourceInflows,Discharge (m$^3$/s),Qint,QintMax,Qadd,Source inflows and limits,python
-MinimizeTreatmentChange,Treatment ramp rate (m$^3$/s$^2$),,,,Treatment rate of change,goal_generator
+id,y_axis_title,variables_style_1,variables_style_2,custom_title,specified_in
+StorageVolumes,Volume (m$^3$),"ProcessBasinVolume, ASRVolume",,Storage volumes,python
+TreatmentCapacity,Discharge (m$^3$/s),,,Treatment flow,goal_generator
+MinimizeTreatmentChange,Treatment ramp rate (m$^3$/s$^2$),,,Treatment rate of change,goal_generator
+ASRFlows,Discharge (m$^3$/s),"QASRInjection, QASRExtracted","QASRInjectionMax, QASRExtractedMax",ASR and River/Aquifer flows,python
+DemandRange,Discharge (m$^3$/s),,,Demand satisfaction,goal_generator
+ASRFlows,Discharge (m$^3$/s),"Qint, Qadd","QintMax, QaddMax",Source inflows and limits,python
+ExtractionVolume,Volume (m$^3$),VASRExtracted,,ASR water supplied,python
