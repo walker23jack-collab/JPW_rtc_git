@@ -33,12 +33,12 @@ model StrategicHeartHourly
 // Inputs
   input SI.VolumeFlowRate Qdem(fixed = true);
   input SI.VolumeFlowRate Qint(fixed = false, min = 0);
-  input SI.VolumeFlowRate Qadd(fixed = false, min = 0, max =0.1585);
+  input SI.VolumeFlowRate Qadd(fixed = false, min = 0, max = 0.15);
 
 // Outputs
   output SI.Volume ProcessBasinVolume;
   output SI.Volume ASRVolume;
-  output SI.VolumeFlowRate QTreatment(min = 0, max = 1.585);
+  output SI.VolumeFlowRate QTreatment(min = 0, max = 1.265);
   output SI.VolumeFlowRate QDistribution(min = 0);
   output SI.VolumeFlowRate QASRInjection(min = 0);
   output SI.VolumeFlowRate QASRExtracted(min = 0);
@@ -46,6 +46,8 @@ model StrategicHeartHourly
   output SI.VolumeFlowRate QTreatmentRaw(min = 0);
   output SI.VolumeFlowRate QTreatmentLossFlow(min = 0);
   output SI.VolumeFlowRate QShortage(min = 0);
+  output SI.Volume VASRExtracted(start = 0, fixed = true);
+  output SI.VolumeFlowRate QASRThroughput(start=0);
 
   parameter Real treatment_efficiency = 0.8;
   
@@ -55,6 +57,9 @@ model StrategicHeartHourly
   QShortage = Qdem - QDistribution;
   ProcessBasinVolume = processbasin.V;
   ASRVolume = ASRwell.V;
+  der(VASRExtracted) = ASRwell.QOut.Q;
+  QASRThroughput = QASRInjection + QASRExtracted;
+
 
   // Raw water entering treatment from the process basin
   QTreatmentRaw = TreatmentPlant.QIn[1].Q;
